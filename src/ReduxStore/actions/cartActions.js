@@ -5,10 +5,11 @@ import {
 	SHIPPING_CART,
 	CART_PAYMENT_METHOD
 } from "../Constant/Constant";
+import {api} from "../../config/config"
 
 
 export const addToCart = (qty, productId) => async (dispatch, getState) => {
-	const { data } = await Axios.get(`/api/products/${productId}`);
+	const { data } = await Axios.get(`${api}/products/${productId}`);
 	
 	dispatch({
 		type: ADD_ITEM_TO_CART,
